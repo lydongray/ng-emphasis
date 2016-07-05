@@ -5,7 +5,7 @@
     "Lydon Gray <lydongray@gmail.com>"
   ],
   "description": "An AngularJS directive that puts emphasis on words within a string of text give one or more search terms",
-  "main": "./dist/ngEmphasis.min.js",
+  "main": "./dist/ngEmphasis.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/lydongray/ng-emphasis.git"
