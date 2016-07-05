@@ -1,0 +1,42 @@
+{
+  "name": "ng-emphasis",
+  "version": "1.0.0",
+  "authors": [
+    "Lydon Gray <lydongray@gmail.com>"
+  ],
+  "description": "An AngularJS directive that puts emphasis on words within a string of text give one or more search terms",
+  "main": "./dist/ngEmphasis.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lydongray/ng-emphasis.git"
+  },
+  "homepage": "https://github.com/lydongray/ng-emphasis",
+  "license": "MIT",
+  "keywords": [
+    "ngEmphasis",
+    "ng-emphasis",
+    "emphasis",
+    "highlight",
+    "search",
+    "list",
+    "angular",
+    "angularJS"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src",
+    "gulpfile.js",
+    "package.json",
+    "tests",
+    "karma.conf.js",
+    "examples"
+  ],
+  "dependencies": {
+    "angular": ">=1.2.0"
+  },
+  "devDependencies": {
+    "angular-mocks": ">=1.2.0"
+  }
+}
