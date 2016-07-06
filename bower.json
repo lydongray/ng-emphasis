@@ -1,11 +1,11 @@
 {
   "name": "ng-emphasis",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "authors": [
     "Lydon Gray <lydongray@gmail.com>"
   ],
   "description": "An AngularJS directive that puts emphasis on words within a string of text give one or more search terms",
-  "main": "./dist/ngEmphasis.js",
+  "main": "./dist/ng-emphasis.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/lydongray/ng-emphasis.git"

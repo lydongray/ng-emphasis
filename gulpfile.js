@@ -11,7 +11,7 @@ var concat = require('gulp-concat');
 var annotate = require('gulp-ng-annotate');
 var babel = require('gulp-babel');
 
-var appName = 'ngEmphasis';
+var appName = 'ng-emphasis';
 var buildEnv = 'dev';
 var inputRoot = '';
 var outputRoot = 'dist/';
@@ -28,8 +28,8 @@ function setPaths(env) {
         input: {
             js: {
                 all: [
-                    inputRoot + 'src/ngEmphasis.module.js', 
-                    inputRoot + 'src/ngEmphasis.directive.js']
+                    inputRoot + 'src/ng-emphasis.module.js', 
+                    inputRoot + 'src/ng-emphasis.directive.js']
             }
         },
         output: {
