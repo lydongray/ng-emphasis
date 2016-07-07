@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/lydongray/ng-emphasis.svg?branch=master)](https://travis-ci.org/lydongray/ng-emphasis)
 
-An [AngularJS](https://github.com/angular/angular.js) directive that puts emphasis on words within a string of text give one or more search terms. Simply include ng-emphasis in your HTML element and watch the magic happen.
+An [AngularJS](https://github.com/angular/angular.js) directive that puts **emphasis** on words within a string of text give one or more search terms. Simply include ng-emphasis in your HTML element and watch the magic happen.
 
 Install
 =======
@@ -35,15 +35,16 @@ angular.module('myApp', [
 
 ### Add an HTML element that uses ng-emphasis
 ```html
-<p ng-emphasis="some is">Here is some text</p>
+<p ng-emphasis="emphasis words">Put emphasis on your words!</p>
 ```
 
 ### You'll get this inside your DOM
 ```html
-<p ng-emphasis="some is">Here <span class="ng-emphasis">is</span> <span class="ng-emphasis">some</span> text</p>
+<p ng-emphasis="emphasis words">Put <span class="ng-emphasis">emphasis</span> on your <span class="ng-emphasis">words</span>!</p>
 ```
+Put **emphasis** on your **words**!
 
-### Bind it to a list of items in the scope
+### Try bind it to a list of items in scope
 
 ```javascript
 angular.module('myApp')
@@ -60,11 +61,11 @@ angular.module('myApp')
 });
 ```
 ```html
-<p ng-repeat="user in users" ng-emphasis="search">{{ user }}</p>
+<span ng-repeat="user in users" ng-emphasis="search">{{ user }}</span> 
 ```
+John
+**Sara**
+Mel
+**Jo**
 
 ### See it in action | [Demo](http://plnkr.co/edit/vuHu4Ps1f4p4Si5MCOm9?p=preview)
-
-Guide
-=====
-
