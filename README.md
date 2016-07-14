@@ -69,3 +69,22 @@ Mel
 **Jo**
 
 ### See it in action | [Demo](http://plnkr.co/edit/vuHu4Ps1f4p4Si5MCOm9?p=preview)
+
+Config
+=====
+
+Configure the directive by injecting the configuration provider `ngEmphasisConfigProvider`.
+
+```javascript
+angular.module('myApp')
+.config(function(ngEmphasisConfigProvider) {
+    // Configurations go here
+});
+```
+
+### setCssClassName()
+Sets the CSS class to use in the directive template. If not configured, ngEmphasis will default to **ng-emphasis** as the CSS class name.
+
+```javascript
+ngEmphasisConfigProvider.setClassName('highlight');
+```

@@ -20,6 +20,7 @@ module.exports = function(config) {
             'bower_components/angular-mocks/angular-mocks.js',
 
             'src/ng-emphasis.module.js',
+            'src/ng-emphasis.provider.js',
             'src/ng-emphasis.directive.js',
 
             'tests/unit/**/*.spec.js',

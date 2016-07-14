@@ -17,7 +17,7 @@
      */
 
     /* @ngInject */
-    function ngEmphasis($compile, $interpolate) {
+    function ngEmphasis($compile, $interpolate, ngEmphasisConfig) {
 
         var directive = {
             restrict: 'A',
@@ -31,11 +31,15 @@
             var phrase = '',
                 text = '',
                 inputPhrase = '',
-                inputText = '';
+                inputText = '',
+                htmlTemplate = '';
 
             // Set input values
             inputPhrase = $attrs.ngEmphasis;
             inputText = $element.html();
+
+            // Set html template
+            htmlTemplate = '<span class="' + ngEmphasisConfig.cssClassName + '">$1</span>';
 
             // Get the input values
             try {
@@ -64,7 +68,7 @@
 
                 // Replace each matched phrase with inline element
                 phrase = phrases.join('|');
-                text = text.replace(new RegExp('(' + phrase + ')', 'gi'), '<span class="ng-emphasis">$1</span>');
+                text = text.replace(new RegExp('(' + phrase + ')', 'gi'), htmlTemplate);
             }
 
             // Replace element

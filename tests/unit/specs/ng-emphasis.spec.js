@@ -6,13 +6,15 @@ describe('Testing ngEmphasis Directive', function () {
     var
         $compile,
         $scope,
-        $httpBackend;
+        $httpBackend,
+        ngEmphasisConfig;
 
     beforeEach(module('ng-emphasis'));
 
-    beforeEach(inject(function(_$compile_, _$rootScope_) {
+    beforeEach(inject(function(_$compile_, _$rootScope_, _ngEmphasisConfig_) {
         $compile = _$compile_;
         $scope = _$rootScope_;
+        ngEmphasisConfig = _ngEmphasisConfig_;
     }));
 
     describe('Testing ngEmphasis Functionality', function() {
@@ -51,6 +53,15 @@ describe('Testing ngEmphasis Directive', function () {
             var html = template.html();
 
             expect(html).toEqual('Here <span class="ng-emphasis">is</span> <span class="ng-emphasis">some</span> text');
+        });
+        it('should set CSS class name', function() {
+            ngEmphasisConfig.setCssClass('highlight');
+
+            var template = $compile('<div ng-emphasis="highlight">highlight this</div>')($scope);
+            $scope.$digest();
+            var html = template.html();
+
+            expect(html).toEqual('<span class="highlight">highlight</span> this');
         });
 
     });
