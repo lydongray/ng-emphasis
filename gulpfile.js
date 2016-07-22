@@ -29,6 +29,7 @@ function setPaths(env) {
             js: {
                 all: [
                     inputRoot + 'src/ng-emphasis.module.js', 
+                    inputRoot + 'src/ng-emphasis.provider.js', 
                     inputRoot + 'src/ng-emphasis.directive.js']
             }
         },
