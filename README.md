@@ -35,7 +35,7 @@ angular.module('myApp', [
 
 ### Add an HTML element that uses ng-emphasis
 ```html
-<p ng-emphasis="emphasis words">Put emphasis on your words!</p>
+<p ng-emphasis="'emphasis words'">Put emphasis on your words!</p>
 ```
 
 ### You'll get this inside your DOM
