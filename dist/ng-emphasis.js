@@ -78,44 +78,39 @@
 
         var directive = {
             restrict: 'A',
-            link: link
+            link: link,
+            scope: {
+                ngEmphasis: '='
+            }
         };
 
         return directive;
 
         function link($scope, $element, $attrs) {
 
-            var phrase = '',
-                text = '',
-                inputPhrase = '',
-                inputText = '',
-                htmlTemplate = '';
-
-            // Set input values
-            inputPhrase = $attrs.ngEmphasis;
-            inputText = $element.html();
+            var htmlTemplate = '';
 
             // Set html template
             htmlTemplate = '<span class="' + ngEmphasisConfig.cssClassName + '">$1</span>';
 
-            // Get the input values
-            try {
-                phrase = $scope.$eval(inputPhrase) || inputPhrase;
-            } catch (ex) {
-                phrase = inputPhrase;
-            }
-            try {
-                text = $interpolate(inputText)($scope) || inputText;
-            } catch (ex) {
-                text = inputText;
-            }
+            // Watch for changes
+            $scope.$watch('ngEmphasis', function (newVal, oldVal) {
 
-            // Split the phrase by space character
-            var phrases = phrase.split(' ');
-            text = '' + text;
+                if (newVal) {
+                    refresh(newVal, $element);
+                } else {
+                    $element.html('<span>' + $element.text() + '</span>');
+                }
+            });
 
-            // Highlight each phrase
-            if (phrase) {
+            function refresh(phrase, elem) {
+
+                // Split the phrase by space character
+                var phrases = phrase.split(' ');
+                var text = elem.text();
+
+                // Highlight each phrase
+
                 // Clean up
                 for (var p in phrases) {
                     if (phrases.hasOwnProperty(p)) {
@@ -124,12 +119,11 @@
                 }
 
                 // Replace each matched phrase with inline element
-                phrase = phrases.join('|');
-                text = text.replace(new RegExp('(' + phrase + ')', 'gi'), htmlTemplate);
-            }
+                text = text.replace(new RegExp('(' + phrases.join('|') + ')', 'gi'), htmlTemplate);
 
-            // Replace element
-            $element.html(text);
+                // Replace element
+                elem.html(text);
+            }
         }
     }
 })();

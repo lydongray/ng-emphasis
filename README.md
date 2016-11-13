@@ -82,9 +82,9 @@ angular.module('myApp')
 });
 ```
 
-### setCssClassName()
+### setCssClass()
 Sets the CSS class to use in the directive template. If not configured, ngEmphasis will default to **ng-emphasis** as the CSS class name.
 
 ```javascript
-ngEmphasisConfigProvider.setClassName('highlight');
+ngEmphasisConfigProvider.setCssClass('highlight');
 ```

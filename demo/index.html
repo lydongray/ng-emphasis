@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet"" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="styles/app.css"/>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+        <script src="../src/ng-emphasis.module.js"></script>
+        <script src="../src/ng-emphasis.provider.js"></script>
+        <script src="../src/ng-emphasis.directive.js"></script>
+        <script src="scripts/app.js"></script>
+    </head>
+    <body ng-app="demoApp" ng-controller="MainCtrl as main" class="well">
+
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="page-header">
+            <h1>{{ main.appName }} <small>example</small></h1>
+        </div>
+        
+        <form>
+            <div class="form-group">
+                <label for="inputSearch">Search</label>
+                <input 
+                type="text" 
+                ng-model="main.searchText" 
+                class="form-control" 
+                id="inputSearch" 
+                placeholder="Start typing to begin search">
+            </div>
+        </form>
+        
+        <table class="table table table-striped">
+            <thead>
+                <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>IP</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in main.users">
+                    <td ng-emphasis="main.searchText">{{ user.id }}</td>
+                    <td ng-emphasis="main.searchText">{{ user.first_name }}</td>
+                    <td ng-emphasis="main.searchText">{{ user.last_name }}</td>
+                    <td ng-emphasis="main.searchText">{{ user.email }}</td>
+                    <td ng-emphasis="main.searchText">{{ user.gender }}</td>
+                    <td ng-emphasis="main.searchText">{{ user.ip_address }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+</html>
