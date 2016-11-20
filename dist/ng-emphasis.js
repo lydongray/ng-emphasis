@@ -1,3 +1,10 @@
+/**
+ * ng-emphasis - An AngularJS directive that puts emphasis on words within a string of text give one or more search terms
+ * @version v1.1.4
+ * @link https://github.com/lydongray/ng-emphasis
+ * @license MIT
+ * @author Lydon Gray <lydongray@gmail.com>
+ */
 'use strict';
 
 /**
